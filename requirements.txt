@@ -1,0 +1,4 @@
+fastapi
+selenium
+beautifulsoup4
+uvicorn[standard]
