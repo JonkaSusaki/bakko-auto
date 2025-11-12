@@ -1,0 +1,289 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f626792f-d615-4468-b4c6-e79e1cb45809",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1kz8Pqv044TJ8UBzTgYlizdNmoofTi-_7ZeI10kE8JAU/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1kz8Pqv044TJ8UBzTgYlizdNmoofTi-_7ZeI10kE8JAU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "58b067ba-53fe-4199-9330-a1070aab48a1",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "8l0CEtcUwd40ZlU8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "ee9c419d-af5e-4c76-bc1a-3122598388f5",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "url": "=http://host.docker.internal:8000/fetch/{{ $json.instagram }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        544,
+        144
+      ],
+      "id": "9753ab25-d2ba-4ce3-a949-69fe1dedb64d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "content",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        704,
+        144
+      ],
+      "id": "78ef5343-f643-4791-b864-0af33eb01fe6",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        896,
+        144
+      ],
+      "id": "2be538ef-4d77-470c-8d40-94b19281416b",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Analise o texto abaixo, retirado de um post do Instagram, e classifique-o em uma das duas categorias:\n\nEvento – Há indicação explícita de um evento que acontece ou vai acontecer (data, horário, local, programação, atrações, ingressos, reservas, dias específicos como “hoje”, “amanhã”, “sexta”, etc.).\n\nPost de Aquecimento – Conteúdo sem relação com um evento específico; geralmente apenas divulgação do estabelecimento, fotos, curiosidades, descrição de produtos, perguntas ao público, etc.\nInstruções obrigatórias:\nNão assuma nada que não esteja no texto.\nResponda apenas com uma das categorias e uma justificativa curta.\nResponda exclusivamente com um JSON válido, seguindo exatamente esta estrutura:\n\n{\n  \"classificacao\": \"Evento\" | \"Post de Aquecimento\",\n  \"justificativa\": \"...\"\n}\n\nTexto a analisar:\n {{ $json.caption }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        1296,
+        160
+      ],
+      "id": "5dccd5d1-989a-42d1-9db2-2318d3e57c1d",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "R9I1AURD3y05RcwX",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        160
+      ],
+      "id": "a380c40a-580d-454f-8cf7-fdaa25cc42ee",
+      "name": "Wait",
+      "webhookId": "f542d4ad-c360-43dd-9608-0980e8ba0a78"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "= {{ $json.content.parts[0].text }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1616,
+        160
+      ],
+      "id": "e6269c34-7b7d-4428-96dc-39d1ed62de16",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8514051a-98a8-460a-8283-dd76d24b1d4d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "c9b688da8befc41f4493ff517fb571339a7fb92c4a221710eff4f86231e5543e"
+  },
+  "id": "4kw6E1dB9bd9YBom",
+  "tags": []
+}
