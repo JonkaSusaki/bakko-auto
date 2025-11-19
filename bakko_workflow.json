@@ -6,10 +6,10 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -144,
-        -16
+        -1152,
+        736
       ],
-      "id": "f626792f-d615-4468-b4c6-e79e1cb45809",
+      "id": "764f9bb2-f10c-46dc-941c-cd58998f1737",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -31,10 +31,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        -16,
-        -16
+        -1024,
+        736
       ],
-      "id": "58b067ba-53fe-4199-9330-a1070aab48a1",
+      "id": "8845a7af-6f7e-4910-9a40-5d3464843978",
       "name": "Get row(s) in sheet",
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -52,10 +52,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        112,
-        -16
+        -896,
+        736
       ],
-      "id": "ee9c419d-af5e-4c76-bc1a-3122598388f5",
+      "id": "06268d54-cb55-4b6e-9172-4ca5b06c9273",
       "name": "Loop Over Items"
     },
     {
@@ -66,10 +66,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        368,
-        -256
+        -640,
+        496
       ],
-      "id": "9753ab25-d2ba-4ce3-a949-69fe1dedb64d",
+      "id": "77f90340-dc4c-4135-bbf2-df26b049d721",
       "name": "HTTP Request"
     },
     {
@@ -80,10 +80,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        368,
-        -128
+        -640,
+        624
       ],
-      "id": "78ef5343-f643-4791-b864-0af33eb01fe6",
+      "id": "449715f1-d5cc-4494-92a4-2f750a7e36ca",
       "name": "Split Out"
     },
     {
@@ -93,10 +93,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        912,
-        -128
+        -96,
+        624
       ],
-      "id": "2be538ef-4d77-470c-8d40-94b19281416b",
+      "id": "7a663258-52ad-4a73-9f34-92b227086e2e",
       "name": "Loop Over Items1"
     },
     {
@@ -120,10 +120,10 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        1632,
-        -240
+        624,
+        512
       ],
-      "id": "5dccd5d1-989a-42d1-9db2-2318d3e57c1d",
+      "id": "92656189-e0fe-4ed2-966a-f3d2b4beb9da",
       "name": "Message a model",
       "credentials": {
         "googlePalmApi": {
@@ -139,10 +139,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1632,
-        -368
+        624,
+        384
       ],
-      "id": "a380c40a-580d-454f-8cf7-fdaa25cc42ee",
+      "id": "5407fc2e-06af-4b20-bf60-08b8fac069f1",
       "name": "Wait",
       "webhookId": "f542d4ad-c360-43dd-9608-0980e8ba0a78"
     },
@@ -155,10 +155,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1632,
-        -128
+        624,
+        624
       ],
-      "id": "e6269c34-7b7d-4428-96dc-39d1ed62de16",
+      "id": "91b67a3a-4509-49b8-8590-11f10894fbde",
       "name": "Edit Fields"
     },
     {
@@ -175,10 +175,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        1072,
-        -544
+        64,
+        208
       ],
-      "id": "23748ca9-224e-48d0-bcb1-3e22436dbdeb",
+      "id": "db77cc2a-8768-4ecd-b1c3-9b5d6b97741d",
       "name": "HTTP Request1"
     },
     {
@@ -198,10 +198,10 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1,
       "position": [
-        1072,
-        -400
+        64,
+        352
       ],
-      "id": "f353444c-3290-47f4-afa9-1ec8b6f9593f",
+      "id": "5021f1da-f20b-4b1b-9ec7-254f69fbf9c7",
       "name": "Analyze an image",
       "credentials": {
         "googlePalmApi": {
@@ -227,10 +227,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1072,
-        -256
+        64,
+        496
       ],
-      "id": "3baf7617-e619-41a9-a962-f50c6455a4c9",
+      "id": "1bc711ba-e6fa-4908-88c1-037c93a0ebd2",
       "name": "Edit Fields1"
     },
     {
@@ -280,10 +280,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1520,
-        0
+        512,
+        752
       ],
-      "id": "9aaea4f4-25bc-44fd-ae3e-1a1be6420ed7",
+      "id": "43672968-13fd-4004-aec2-fda46cddf2d5",
       "name": "Edit Fields2"
     },
     {
@@ -293,10 +293,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        1200,
-        -16
+        192,
+        736
       ],
-      "id": "789cd568-5680-46bf-9133-8045c7a6e16b",
+      "id": "0f877962-af4f-4d45-a2d4-9bc4fe8c9ab5",
       "name": "Merge"
     },
     {
@@ -307,10 +307,10 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1360,
-        0
+        352,
+        752
       ],
-      "id": "3be41466-77ae-4e9e-82a5-67b6dcfda188",
+      "id": "5c78815e-f703-4901-936e-ee5b333677c6",
       "name": "Aggregate"
     },
     {
@@ -318,10 +318,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        496,
-        0
+        -512,
+        752
       ],
-      "id": "d51b1f6d-fd8d-48fb-8ad6-92a7cc9aebc6",
+      "id": "4680e9e8-926b-4191-a81f-18ced7d4031c",
       "name": "Merge1"
     },
     {
@@ -331,10 +331,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        608,
-        0
+        -400,
+        752
       ],
-      "id": "71c65404-461f-40cb-8881-b59b6d3beaba",
+      "id": "c42f0ec6-6ae9-4e3c-a1e2-ac23bc25f4c1",
       "name": "Code in JavaScript"
     },
     {
@@ -354,10 +354,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        736,
-        -256
+        -272,
+        496
       ],
-      "id": "7d36a503-84ce-40b4-9a56-a1ba0a38a019",
+      "id": "6dd7fe12-5196-402f-803f-324f5f60d02c",
       "name": "Edit Fields3"
     },
     {
@@ -377,10 +377,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        752,
-        48
+        -256,
+        800
       ],
-      "id": "f6614793-6991-4257-8d40-d2dfa6af14f9",
+      "id": "fa71f46f-d941-45d6-98b1-e6e6d9fc0d20",
       "name": "Edit Fields4"
     },
     {
@@ -391,10 +391,10 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        736,
-        -128
+        -272,
+        624
       ],
-      "id": "1a326095-6e23-4ac6-8e17-76b95738f3d9",
+      "id": "8636e60d-aac7-4127-bffc-9427f46b4e8b",
       "name": "Split Out1"
     },
     {
@@ -409,7 +409,7 @@
           "conditions": [
             {
               "id": "685f8e9b-e643-4256-81b4-393e985fb18e",
-              "leftValue": "={{ $json[\"Classificação\"] }}",
+              "leftValue": "={{ $json.classificacao }}",
               "rightValue": "Evento",
               "operator": {
                 "type": "string",
@@ -419,11 +419,21 @@
             },
             {
               "id": "ad352817-abbb-4aac-bc3a-392e15166fd9",
-              "leftValue": "={{ $json[\"Confiança\"] }}",
-              "rightValue": 65,
+              "leftValue": "={{ $json.confianca }}",
+              "rightValue": 80,
               "operator": {
                 "type": "number",
                 "operation": "gt"
+              }
+            },
+            {
+              "id": "a0c644ec-5945-440a-b76a-a453ebd15c91",
+              "leftValue": "=",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
               }
             }
           ],
@@ -434,10 +444,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2080,
-        -16
+        1488,
+        736
       ],
-      "id": "70c9c0f9-8193-4542-b6b8-37efb0bd7740",
+      "id": "e520ea26-a3fb-4e3c-b355-e29c0bd6493d",
       "name": "If"
     },
     {
@@ -447,10 +457,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2320,
-        -32
+        1808,
+        720
       ],
-      "id": "53be8c5a-6607-429a-a37c-68ee651e8110",
+      "id": "635cb8dc-7924-4954-8c4d-3d1321b6f120",
       "name": "Code in JavaScript1"
     },
     {
@@ -458,10 +468,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        1888,
-        -16
+        880,
+        736
       ],
-      "id": "5cf7d416-44d9-4819-8ce0-e33475ad9891",
+      "id": "1a68e3f8-6a7e-4962-88a3-3951acd375a9",
       "name": "Merge2"
     },
     {
@@ -471,10 +481,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -96,
-        -272
+        -1104,
+        480
       ],
-      "id": "328661dd-87c0-4ec7-9229-dab478b7e304",
+      "id": "4723dfca-385b-4da7-9ded-3a4e16405a8b",
       "name": "Sticky Note"
     },
     {
@@ -484,10 +494,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        544,
-        -480
+        -464,
+        272
       ],
-      "id": "e6253ad4-7e67-42e6-a158-993f92a40d1a",
+      "id": "66d87a73-4fd8-40ff-a00a-37454c840a0a",
       "name": "Sticky Note1"
     },
     {
@@ -497,10 +507,10 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1008,
-        -752
+        0,
+        0
       ],
-      "id": "120186b6-0b99-43ec-802b-3456ff1e1290",
+      "id": "202bb0c1-fb63-4dcd-9538-e706fc40b9b4",
       "name": "Sticky Note2"
     },
     {
@@ -510,11 +520,102 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1744,
-        -592
+        736,
+        160
       ],
-      "id": "073ca2bc-ec25-49ea-bf8c-350ebe5bf4aa",
+      "id": "026e14b7-7b5a-41c3-87a7-6a20b63838f2",
       "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1ab82036-33ad-4bd9-9970-79e18146c427",
+              "name": "classificacao",
+              "value": "={{ $json.data[0].Classificação }}",
+              "type": "string"
+            },
+            {
+              "id": "a8d18652-214b-484c-89a2-ee163dbe883b",
+              "name": "justificativa",
+              "value": "={{ $json.data[0].Justificativa }}",
+              "type": "string"
+            },
+            {
+              "id": "7f8fada7-116c-4f2b-b401-f81b0b055c6c",
+              "name": "confianca",
+              "value": "={{ $json.data[0][\"Confiança\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5942a979-18f5-4504-8ec8-c61f1b4b6125",
+              "name": "elementos",
+              "value": "={{ $json.data[0].Elementos_Relevantes }}",
+              "type": "array"
+            },
+            {
+              "id": "aeecd33b-3354-4844-a9fd-84a16cf32b86",
+              "name": "descricaoImagem",
+              "value": "={{ $json.data[1].imageDescription }}",
+              "type": "string"
+            },
+            {
+              "id": "8a9fc672-76d4-463c-9962-575fa9124c9c",
+              "name": "caption",
+              "value": "={{ $json.data[1].caption }}",
+              "type": "string"
+            },
+            {
+              "id": "b8ab6c71-2f3e-4fbe-8198-560c7459b9ff",
+              "name": "imgObj",
+              "value": "={{ $json.data[1].imageObj }}",
+              "type": "object"
+            },
+            {
+              "id": "eea9bd9e-609f-4889-8a29-697b7904741c",
+              "name": "dataPost",
+              "value": "={{ $json.data[1].date }}",
+              "type": "string"
+            },
+            {
+              "id": "38231ec4-7238-435b-99fe-337608dbce77",
+              "name": "nomeOrganizador",
+              "value": "={{ $json.data[1].nomeOrganizador }}",
+              "type": "string"
+            },
+            {
+              "id": "9a6a08f9-4daf-4c86-afe3-f410e725ecc3",
+              "name": "idOrganizador",
+              "value": "={{ $json.data[1].IdOrganizador }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1280,
+        736
+      ],
+      "id": "84f2e826-4676-41e5-b29e-03886b16193e",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        736
+      ],
+      "id": "066243f4-2cbc-47f9-9256-29d5e3a29ec5",
+      "name": "Aggregate1"
     }
   ],
   "pinData": {},
@@ -793,7 +894,29 @@
       "main": [
         [
           {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
             "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
             "type": "main",
             "index": 0
           }
@@ -805,11 +928,10 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "4347516b-ea6d-4672-817f-d7e88fa7e561",
+  "versionId": "527557d3-864c-40f6-bee8-1fae91c225f9",
   "meta": {
-    "templateCredsSetupCompleted": true,
     "instanceId": "c9b688da8befc41f4493ff517fb571339a7fb92c4a221710eff4f86231e5543e"
   },
-  "id": "4kw6E1dB9bd9YBom",
+  "id": "TJJkJuDIkdrRnxRV",
   "tags": []
 }
